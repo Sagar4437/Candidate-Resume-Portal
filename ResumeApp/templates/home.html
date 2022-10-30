@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content_block %}
+
+<div class='row'>
+    <div class="col-7 mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Candidate Form</h1>
+            <hr class="my-4">
+            <form method='POST' autocomplete='off' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form | crispy}}
+                <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-5 mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">List</h1>
+            <p class="lead font-italic">All candidates information</p>
+            <hr class="my-4">
+            <table class="table table-borderless">
+                <thead class="border-bottom font-weight-bold">
+                    <tr>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Open</i></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for candidate in candidates %}
+                        <tr>
+                            <td>{{candidate.firstname}}</td>
+                            <td>{{candidate.lastname}}</td>
+                            <td><a href="{% url 'details' candidate.id %}"><i class="fas fa-eye"></i></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock content_block %}

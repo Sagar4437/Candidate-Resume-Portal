@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content_block %}
+
+<div class="jumbotron">
+    <div class='row'>
+        <div class='col-8'>
+            <h1 class="display-4">Candidate Details</h1>
+            <hr class="my-4">
+            <table class="table table-borderless">
+ 
+                <tbody >
+                    <tr>
+                        <td>First Name : </td>
+                        <td>{{candidate.firstname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Name : </td>
+                        <td>{{candidate.lastname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth : </td>
+                        <td>{{candidate.date_of_birth}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender : </td>
+                        <td>{{candidate.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address : </td>
+                        <td>{{candidate.address}}</td>
+                    </tr>
+                    <tr>
+                        <td>City : </td>
+                        <td>{{candidate.city}}</td>
+                    </tr>
+                    <tr>
+                        <td>State : </td>
+                        <td>{{candidate.state}}</td>
+                    </tr>
+                    <tr>
+                        <td>PIN : </td>
+                        <td>{{candidate.pin}}</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile : </td>
+                        <td>{{candidate.mobile}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email : </td>
+                        <td>{{candidate.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Preferes Job Cities : </td>
+                        <td>
+                            {{candidate.job_city}}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Resume : </td>
+                        <td><a href="{{candidate.resume.url}}">Download Resume</a></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+        </div>
+        <div class='col-4'>
+            <img src="{{candidate.profile_img.url}}" alt="" class="img-fluid img-thumbnail float-end mt-4" width="150" height="150">
+        </div>
+    </div>
+</div>
+
+{% endblock content_block %}
