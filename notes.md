@@ -1,7 +1,5 @@
 # To view media files in brower
 
-image.png
-
 ## Step 1: Add in Settings.py
 
 MEDIA_ROOT = Path(BASE_DIR,'media')
@@ -23,4 +21,4 @@ form = CandidateForm(request.POST, request.FILES)
 
 ## Step 4:
 
-<form method='POST' autocomplete='off' enctype="multipart/form-data">
+#### <form method='POST' autocomplete='off' enctype="multipart/form-data">
