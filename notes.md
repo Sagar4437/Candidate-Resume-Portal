@@ -21,4 +21,4 @@ form = CandidateForm(request.POST, request.FILES)
 
 ## Step 4:
 
-#### <form method='POST' autocomplete='off' enctype="multipart/form-data">
+#### form method='POST' autocomplete='off' enctype="multipart/form-data"
